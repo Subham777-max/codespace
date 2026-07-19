@@ -13,7 +13,7 @@ export async function createPod(sandboxId){
             containers: [
                 {
                     image: "template:latest",
-                    imagePullPolicy: "IfNotPresent",
+                    imagePullPolicy: "Always",
                     name: "sandbox-container",
                     ports: [
                         {
@@ -26,7 +26,7 @@ export async function createPod(sandboxId){
                             cpu: "500m",
                             memory: "512Mi"
                         },
-                        request:{
+                        requests:{
                             cpu: "250m",
                             memory: "256Mi"
                         }
